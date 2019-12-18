@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WeatherJS</title>
+</head>
+<header class="card-header" ><h1>Weather Surfer</h1></header>
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4  text-center bg-primary my-5 py-4 rounded">
+        <h3 class="text-info text-left" >Current Location: </h3>
+        <h2 class="text-light " id="w-location"></h2>
+        <h3 class="text-light " id="w-desc"></h3>
+        <br>
+          <li class="list-group-item" id="w-temp"></li>
+          <li class="list-group-item" id="w-humidity"></li>
+          <li class="list-group-item" id="w-wind"></li>
+          <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
+            Change Location
+          </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="w-form">
+            <div class="form-group">
+              <label for="city">City</label>
+              <!-- <input type="text" id="city" class="form-control"> -->
+              <select id="city"  class="input-group-text"  >
+                  <option id="city" class="form-control" >select a city</option>
+                  <option value="London">London</option>
+                  <option value="Kent,uk">Kent</option>
+                  <option value="Manchester,uk">Manchester</option>
+                  <option value="Plymouth">Plymouth</option>
+                  <option value="Brighton">Brighton</option>
+                </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="w-change-btn" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tablist  -->
+
+  <ul class="tabs" role="tablist">
+      <!--   Novice Section -->
+      <li>
+          <input type="radio" name="tabs" id="tab1" checked />
+          <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0">Novice</label>
+          <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="Novice" aria-hidden="false">
+          <div class="container">
+              <div class="grid-container rounded">
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                </div>
+          </div>   
+      </div>   
+      <!--   Intermediate Section -->
+      <li>
+          <input type="radio" name="tabs" id="tab2" />
+          <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0">Intermediate</label>
+          <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="Intermediate" aria-hidden="true">
+              <div class="grid-container rounded">
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                </div>
+          </div>
+      </li>
+      <!--   Expert Section -->
+      <li>
+          <input type="radio" name="tabs" id="tab3" />
+          <label for="tab3" role="tab" aria-selected="false" aria-controls="panel3" tabindex="0">Expert</label>
+          <div id="tab-content3" class="tab-content" role="tabpanel" aria-labelledby="Expert" aria-hidden="true">
+              <div class="grid-container rounded">
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                  <div class="grid-item">-</div>
+                </div>
+          </div>
+      </li>
+
+  </ul>
+
+
+
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <script src="storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
